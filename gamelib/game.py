@@ -318,6 +318,7 @@ class Game(object):
         self.clock = pg.time.Clock()
         self.fps = 60.0
         self.done = False
+        self.closed = False
         self.keys = pg.key.get_pressed()
         self.player = Player((0,0,50,50), 190)
         self.player.rect.center = self.screen_rect.center
@@ -377,8 +378,7 @@ class Game(object):
             self.keys = pg.key.get_pressed()
             if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
                 self.done = True
-            elif event.type == pg.KEYDOWN and self.keys[pg.K_SPACE]:
-                self.objects.add(Laser(self.player.rect.center, self.angle))
+                self.closed = True
             elif event.type == pg.KEYDOWN and self.keys[pg.K_i]:
                 #  import pdb
                 #  pdb.set_trace()
@@ -499,6 +499,22 @@ class Game(object):
             pg.display.update()
             delta = self.clock.tick(self.fps)/1000.0
             self.display_fps()
+
+
+        if not self.closed:
+            while True:
+                game_over_img = pg.image.load(settings.IMG_DIR + "/game_over.png").convert_alpha()
+                self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 438 / 2, settings.SCREEN_SIZE[1] / 2 - 171 / 2, 438, 171))
+                pg.display.update()
+                self.display_fps()
+
+                for event in pg.event.get():
+                    self.keys = pg.key.get_pressed()
+                    if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
+                        return
+                    elif event.type == pg.KEYDOWN and self.keys[pg.K_SPACE]:
+                        Game().main_loop()
+                        return
 
 
 class Camera(object):
