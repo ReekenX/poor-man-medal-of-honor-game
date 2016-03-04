@@ -322,7 +322,7 @@ class Game(object):
         self.closed = False
         self.keys = pg.key.get_pressed()
         self.player = Player((0,0,50,50), 190)
-        self.player.rect.center = self.screen_rect.center
+        self.player.rect.center = (100, 100)
         self.objects = pg.sprite.Group()
         self.angle = -math.radians(10-135)
         self.mouse = None
