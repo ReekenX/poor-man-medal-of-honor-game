@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg5246"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   width="50"
+   height="50"
+   sodipodi:docname="shader_sm.png"
+   inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/block.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <metadata
+     id="metadata5252">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5250" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     id="namedview5248"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     borderlayer="true"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="13.350176"
+     inkscape:cx="28.492893"
+     inkscape:cy="26.896446"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5246" />
+  <rect
+     style="fill:#313883;fill-opacity:1;stroke:none;opacity:1"
+     id="rect7419"
+     width="50"
+     height="50"
+     x="0"
+     y="-2.220446e-15"
+     inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/block.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <rect
+     style="opacity:0.5098038;fill:#171e34;fill-opacity:1;stroke:#0a0a13;stroke-width:0.93086374;stroke-opacity:1"
+     id="rect7419-7"
+     width="35.069134"
+     height="35.069138"
+     x="7.4654322"
+     y="7.4654336" />
+  <path
+     style="opacity:0.5098038;fill:#2e4a7d;fill-opacity:1;stroke:#0a0a13;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 7.4773078,7.2268883 42.434935,42.184516 41.536071,41.747935"
+     id="path7482"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccc" />
+  <path
+     style="opacity:0.5098038;fill:#2e4a7d;fill-opacity:1;stroke:#0a0a13;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 8.0508475,42.372881 42.171664,7.7383742"
+     id="path7484"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+</svg>

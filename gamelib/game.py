@@ -172,7 +172,8 @@ class Block(pg.sprite.Sprite):
         self.mask = pg.mask.from_surface(self.image)
 
     def make_image(self):
-        image = pg.image.load(settings.IMG_DIR + "/shader_sm.png").convert_alpha()
+        image = pg.image.load(settings.IMG_DIR + "/block.png").convert_alpha()
+        image.set_colorkey(COLOR_KEY)
         image.blit(image, (0,0))
         return image
 
@@ -371,6 +372,31 @@ class Game(object):
         self.camera_height = row * 50
         self.obstacles = pg.sprite.Group(blocks)
         self.elements = pg.sprite.Group(elements)
+
+
+        border_color = (0, 0, 0)
+        for obj in self.obstacles:
+            draw_top = True
+            draw_right = True
+            draw_left = True
+            draw_bottom = True
+            for obj2 in self.obstacles:
+                if obj2.rect.left - 50 == obj.rect.left and obj2.rect.top == obj.rect.top:
+                    draw_left = False
+                if obj2.rect.right + 50 == obj.rect.right and obj2.rect.top == obj.rect.top:
+                    draw_right = False
+                if obj2.rect.top - 50 == obj.rect.top and obj2.rect.left == obj.rect.left:
+                    draw_bottom = False
+                if obj2.rect.bottom + 50 == obj.rect.bottom and obj2.rect.left == obj.rect.left:
+                    draw_top = False
+            if draw_right:
+                pg.draw.line(obj.image, border_color, (0, 0), (0, 50))
+            if draw_top:
+                pg.draw.line(obj.image, border_color, (0, 0), (50, 0))
+            if draw_bottom:
+                pg.draw.line(obj.image, border_color, (0, 49), (50, 49))
+            if draw_left:
+                pg.draw.line(obj.image, border_color, (49, 0), (49, 50))
 
 
     def event_loop(self):
