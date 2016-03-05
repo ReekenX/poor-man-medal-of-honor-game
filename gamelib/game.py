@@ -387,7 +387,7 @@ class Game(object):
                 elif char == 'S':
                     self.improvements.append(Star((column*50+20, row*50+20)))
                 elif char == 'W':
-                    self.improvements.append(Weapon((column*50, row*50)))
+                    self.improvements.append(Weapon((column*50 + 15, row*50 + 15)))
                 elements.append(Ground((column*50, row*50)))
                 column += 1
             self.camera_width = column * 50
