@@ -572,7 +572,7 @@ class Game(object):
             if enemy.visible:
                 if self.player.collides_with_enemy(enemy, self.camera):
                     self.player.kill()
-                    sys.exit(0)
+                    self.done = True
         for star in self.stars:
             if self.player.collides_with_star(star, self.camera):
                 self.bullets_left += 8
