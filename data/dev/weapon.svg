@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="293.48807"
+   height="188.21089"
+   id="svg4029"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/weapon.png"
+   inkscape:export-xdpi="9.1996927"
+   inkscape:export-ydpi="9.1996927"
+   sodipodi:docname="New document 5">
+  <defs
+     id="defs4031" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="4.7727343"
+     inkscape:cy="132.81708"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4034">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-94.410495,-376.06503)">
+    <path
+       style="fill:#d53700;fill-opacity:1;stroke:none"
+       d="m 155.90726,376.06503 225.58663,0 c 3.5482,0 6.40468,2.85649 6.40468,6.40468 l -0.12627,18.77246 -204.51659,1.65573 204.64286,-0.89286 0,21.69847 c 0,3.54819 -2.85648,6.40468 -6.40468,6.40468 l -225.58663,0 c -3.54819,0 -6.40468,-2.85649 -6.40468,-6.40468 l 0,-41.2338 c 0,-3.54819 2.85649,-6.40468 6.40468,-6.40468 z"
+       id="rect4037"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssscccssssss" />
+    <path
+       style="fill:#d53700;fill-opacity:1;stroke:none"
+       d="m 138.81601,389.70209 68.65951,2.39381 c 3.08349,0.1075 2.21202,27.12636 2.21202,31.08689 0,0 -50.16197,142.50632 -51.23417,141.08254 C 147.77416,550.0843 92.360847,574.63791 94.469093,532.88332 L 126.16349,423.18279 c 1.07283,-3.71327 9.56905,-33.5882 12.65252,-33.4807 z"
+       id="rect4039"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscscss" />
+    <path
+       style="fill:#d53700;fill-opacity:1;stroke:none"
+       d="M 89.90625 28.28125 C 85.728003 28.28125 82.375 31.634253 82.375 35.8125 L 82.375 109.125 C 82.375 113.30325 85.728003 116.6875 89.90625 116.6875 L 161.6875 116.6875 C 165.86575 116.6875 169.25 113.30325 169.25 109.125 L 169.25 35.8125 C 169.25 31.634253 165.86575 28.28125 161.6875 28.28125 L 89.90625 28.28125 z M 121.21875 55.0625 L 141 55.0625 C 145.17825 55.0625 148.53125 58.415503 148.53125 62.59375 L 148.53125 91.96875 C 148.53125 96.146997 145.17825 99.5 141 99.5 L 121.21875 99.5 C 117.0405 99.5 113.6875 96.146997 113.6875 91.96875 L 113.6875 62.59375 C 113.6875 58.415503 117.0405 55.0625 121.21875 55.0625 z "
+       transform="translate(94.410495,376.06503)"
+       id="rect4042" />
+    <path
+       style="fill:#d53700;fill-opacity:1;stroke:none"
+       d="m 225.63006,429.64966 12.46052,0.43444 c 0.5596,0.0195 0.40144,4.92296 0.40144,5.64173 0,0 -9.10353,25.86245 -9.29811,25.60405 -1.9381,-2.57361 -11.99466,1.88245 -11.61205,-5.69529 l 5.75199,-19.90876 c 0.1947,-0.67389 1.73662,-6.09568 2.29621,-6.07617 z"
+       id="rect4039-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscscss" />
+  </g>
+</svg>

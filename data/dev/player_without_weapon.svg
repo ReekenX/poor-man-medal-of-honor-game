@@ -12,7 +12,7 @@
    inkscape:export-ydpi="90"
    inkscape:export-xdpi="90"
    inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/player_with_weapon.png"
-   sodipodi:docname="player.svg"
+   sodipodi:docname="player_with_weapon.svg"
    inkscape:version="0.48.4 r9939"
    version="1.1"
    id="svg4103"
@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="49.54949"
-     inkscape:cy="23.12729"
+     inkscape:zoom="4"
+     inkscape:cx="166.27728"
+     inkscape:cy="-9.8283571"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -86,12 +86,12 @@
        ry="3.7522857"
        transform="scale(-1,1)" />
     <rect
-       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703000000004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3949-5"
        width="5.3336987"
        height="18.724293"
        x="-54.972675"
-       y="1088.9198"
+       y="1094.9203"
        ry="4.7821035"
        transform="scale(-1,1)" />
     <rect
@@ -198,12 +198,12 @@
        ry="3.7522857"
        transform="scale(-1,1)" />
     <rect
-       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703000000004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3949-5-4-3"
        width="5.3336987"
        height="18.724293"
        x="-154.97269"
-       y="1088.9198"
+       y="1084.9203"
        ry="4.7821035"
        transform="scale(-1,1)" />
     <rect
@@ -254,12 +254,12 @@
        ry="3.7522857"
        transform="scale(-1,1)" />
     <rect
-       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#676704;fill-opacity:1;stroke:#ffffff;stroke-width:0.85182703000000004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3949-5-4-3-5"
        width="5.3336987"
        height="18.724293"
        x="-204.97267"
-       y="1088.9198"
+       y="1092.9202"
        ry="4.7821035"
        transform="scale(-1,1)" />
     <rect
@@ -300,42 +300,6 @@
        x="165.40483"
        y="1074.083"
        ry="9.0097704" />
-    <rect
-       style="fill:#181515;fill-opacity:1;stroke:#ffffff;stroke-width:0.45425939999999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3949-5-3"
-       width="3.0796161"
-       height="9.2223654"
-       x="-54.168743"
-       y="1085.7058"
-       ry="2.3553524"
-       transform="scale(-1,1)" />
-    <rect
-       transform="scale(-1,1)"
-       ry="2.3553524"
-       y="1085.7054"
-       x="-104.18582"
-       height="9.2223654"
-       width="3.0796161"
-       id="rect4023"
-       style="fill:#181515;fill-opacity:1;stroke:#ffffff;stroke-width:0.4542594;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-    <rect
-       style="fill:#181515;fill-opacity:1;stroke:#ffffff;stroke-width:0.4542594;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect4025"
-       width="3.0796161"
-       height="9.2223654"
-       x="-154.19218"
-       y="1085.6429"
-       ry="2.3553524"
-       transform="scale(-1,1)" />
-    <rect
-       transform="scale(-1,1)"
-       ry="2.3553524"
-       y="1085.7054"
-       x="-204.15933"
-       height="9.2223654"
-       width="3.0796161"
-       id="rect4027"
-       style="fill:#181515;fill-opacity:1;stroke:#ffffff;stroke-width:0.4542594;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
   </g>
   <g
      inkscape:label="Layer 1"

@@ -209,6 +209,18 @@ class Weapon(pg.sprite.Sprite):
         image.blit(image, (0,0))
         return image
 
+class Notification(pg.sprite.Sprite):
+    def __init__(self, location, number):
+        pg.sprite.Sprite.__init__(self)
+        self.image = self.make_image(number)
+        self.rect = self.image.get_rect(topleft=location)
+        self.mask = pg.mask.from_surface(self.image)
+
+    def make_image(self, number):
+        image = pg.image.load(settings.IMG_DIR + "/notification" + number + ".png").convert_alpha()
+        image.blit(image, (0,0))
+        return image
+
 class Ground(pg.sprite.Sprite):
     def __init__(self, location):
         pg.sprite.Sprite.__init__(self)
@@ -384,10 +396,12 @@ class Game(object):
                     enemy = Enemy((0, 0, 50, 50), 100)
                     enemy.rect.center = (column*50, row*50)
                     self.enemies.append(enemy)
-                elif char == 'S':
+                elif char == 'B':
                     self.improvements.append(Star((column*50+20, row*50+20)))
                 elif char == 'W':
                     self.improvements.append(Weapon((column*50 + 15, row*50 + 15)))
+                elif char == '1':
+                    self.notifications.append(Notification((column*50 + 15, row*50 + 15)))
                 elements.append(Ground((column*50, row*50)))
                 column += 1
             self.camera_width = column * 50
