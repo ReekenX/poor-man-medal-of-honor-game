@@ -3,6 +3,7 @@ import os
 import sys
 import math
 import random
+import math
 
 # 3rd party
 import pygame as pg
@@ -126,14 +127,14 @@ class Player(pg.sprite.Sprite):
         return self.rect.colliderect(star)
 
 
-class Laser(pg.sprite.Sprite):
+class Bullet(pg.sprite.Sprite):
     def __init__(self, location, angle):
         pg.sprite.Sprite.__init__(self)
-        TURRET = pg.image.load(settings.IMG_DIR + "/bullet.png").convert()
-        TURRET.set_colorkey(COLOR_KEY)
-        self.original_laser = TURRET.subsurface((0,0,13,13))
+        bullet_image = pg.image.load(settings.IMG_DIR + "/bullet.png").convert()
+        bullet_image.set_colorkey(COLOR_KEY)
+        self.original_bullet = bullet_image.subsurface((0,0,13,13))
         self.angle = -math.radians(angle-135)
-        self.image = pg.transform.rotate(self.original_laser, angle)
+        self.image = pg.transform.rotate(self.original_bullet, angle)
         self.rect = self.image.get_rect(center=location)
         self.move = [self.rect.x, self.rect.y]
         self.speed_magnitude = 15
@@ -215,6 +216,8 @@ class Enemy(pg.sprite.Sprite):
         self.image = None
 
         self.sprites = pg.image.load(settings.IMG_DIR + "/enemy" + str(random.randint(1, 3)) + ".png").convert_alpha()
+
+        self.shooting_time = pg.time.get_ticks()
 
         self.frame  = 0
         self.frames = self.get_frames()
@@ -323,10 +326,11 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.player = Player((0,0,50,50), 190)
         self.player.rect.center = (100, 100)
-        self.objects = pg.sprite.Group()
         self.angle = -math.radians(10-135)
         self.mouse = None
 
+        self.player_bullets = pg.sprite.Group()
+        self.enemy_bullets = pg.sprite.Group()
         self.elements = []
         self.obstacles = []
         self.enemies = []
@@ -334,7 +338,7 @@ class Game(object):
 
         self.bullets_left = 8
 
-        self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 12)
+        self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 14)
 
 
     def get_angle(self, mouse):
@@ -422,7 +426,7 @@ class Game(object):
 
             if event.type == pg.MOUSEBUTTONDOWN and event.button == 1:
                 if self.bullets_left > 0:
-                    self.objects.add(Laser(self.player.rect.center, self.angle))
+                    self.player_bullets.add(Bullet(self.player.rect.center, self.angle))
                     self.bullets_left -= 1
             elif event.type == pg.MOUSEMOTION:
                 self.get_angle(event.pos)
@@ -452,6 +456,8 @@ class Game(object):
         self.screen.blit(pg.transform.rotate(self.player.image, self.angle +135), self.camera.apply(self.player))
 
         # draw enemies
+        distance = 300
+        margin = 100
         for enemy in self.enemies:
             rect = self.camera.apply(enemy)
             enemy.visible = rect.colliderect(self.screen_rect)
@@ -465,17 +471,69 @@ class Game(object):
                 else:
                     self.screen.blit(pg.transform.rotate(enemy.image, 90), rect)
 
+                if math.sqrt((self.player.rect.x - enemy.rect.x)**2 + (self.player.rect.y - enemy.rect.y)**2) < distance:
+                    #  pg.draw.lines(self.screen, (200, 150, 150), 1, [(self.player.rect.x + self.camera.state.x, self.player.rect.y + self.camera.state.y), (enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y)])
+                    if enemy.direction == pg.K_w:
+                        rect = pg.Rect(
+                                enemy.rect.x - margin / 2,
+                                enemy.rect.y - distance,
+                                margin * 2,
+                                distance)
+                        #  pg.draw.rect(self.screen, (200, 150, 150), self.camera.apply_rect(rect), 1)
+                    elif enemy.direction == pg.K_s:
+                        rect = pg.Rect(
+                                enemy.rect.x - margin / 2,
+                                enemy.rect.y,
+                                margin * 2,
+                                distance)
+                        #  pg.draw.rect(self.screen, (200, 150, 150), self.camera.apply_rect(rect), 1)
+                    elif enemy.direction == pg.K_d:
+                        rect = pg.Rect(
+                                enemy.rect.x,
+                                enemy.rect.y - margin / 2,
+                                distance,
+                                margin * 2)
+                        #  pg.draw.rect(self.screen, (200, 150, 150), self.camera.apply_rect(rect), 1)
+                    elif enemy.direction == pg.K_a:
+                        rect = pg.Rect(
+                                enemy.rect.x - distance,
+                                enemy.rect.y - margin / 2,
+                                distance,
+                                margin * 2)
+                        #  pg.draw.rect(self.screen, (200, 150, 150), self.camera.apply_rect(rect), 1)
+                    if rect.colliderect(self.player):
+                        #  pg.draw.lines(self.screen, (200, 150, 150), 1, [(enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y), (enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y - distance)])
+                        now = pg.time.get_ticks()
+                        if now-enemy.shooting_time > 200:
+                            enemy.shooting_time = now
+                            dx = enemy.rect.x - self.player.rect.x
+                            dy = enemy.rect.y - self.player.rect.y
+                            rads = math.atan2(-dy,dx)
+                            rads %= 2*math.pi
+                            angle = math.degrees(rads) - 40
+                            self.enemy_bullets.add(Bullet(enemy.rect.center, angle))
+                    #  if enemy.direction == pg.K_s:
+                        #  pg.draw.lines(self.screen, (200, 150, 150), 1, [(enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y), (enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y + distance)])
+                    #  if enemy.direction == pg.K_d:
+                        #  pg.draw.lines(self.screen, (200, 150, 150), 1, [(enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y), (enemy.rect.x + self.camera.state.x + distance, enemy.rect.y + self.camera.state.y)])
+                    #  if enemy.direction == pg.K_a:
+                        #  pg.draw.lines(self.screen, (200, 150, 150), 1, [(enemy.rect.x + self.camera.state.x, enemy.rect.y + self.camera.state.y), (enemy.rect.x + self.camera.state.x - distance, enemy.rect.y + self.camera.state.y)])
+
         # draw shootings
-        for obj in self.objects:
+        for obj in self.player_bullets:
+            rect = self.camera.apply(obj)
+            if rect.colliderect(self.screen_rect):
+                self.screen.blit(obj.image, rect)
+
+        for obj in self.enemy_bullets:
             rect = self.camera.apply(obj)
             if rect.colliderect(self.screen_rect):
                 self.screen.blit(obj.image, rect)
 
         self.screen.blit(self.font.render('Pyweek #21', 1, (250, 250, 250)), (10, 10, 200, 50))
-        self.screen.blit(self.font.render('Kill them ALL!', 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, 10, 200, 50))
-        self.screen.blit(self.font.render('Bullets left: %d' % self.bullets_left, 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, settings.SCREEN_SIZE[1]-30, 500, 500))
+        self.screen.blit(self.font.render('Bullets: %d' % self.bullets_left, 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, settings.SCREEN_SIZE[1]-30, 500, 500))
 
-        #  for obj in self.objects:
+        #  for obj in self.player_bullets:
             #  olist = obj.make_mask().outline()
             #  points = []
             #  for x, y in olist:
@@ -493,19 +551,23 @@ class Game(object):
         pg.display.set_caption(caption)
 
     def update(self, obstacles):
-        for obj in self.objects:
+        for obj in self.player_bullets:
             obj.check_collision(obstacles, self.camera)
             obj.check_collision(self.enemies, self.camera)
+        for obj in self.enemy_bullets:
+            obj.check_collision(obstacles, self.camera)
+            obj.check_collision([self.player], self.camera)
         for enemy in self.enemies:
             if enemy.visible:
                 if self.player.collides_with_enemy(enemy, self.camera):
                     self.player.kill()
-                    self.done = True
+                    sys.exit(0)
         for star in self.stars:
             if self.player.collides_with_star(star, self.camera):
                 self.bullets_left += 8
                 self.stars.remove(star)
-        self.objects.update(self.screen_rect)
+        self.player_bullets.update(self.screen_rect)
+        self.enemy_bullets.update(self.screen_rect)
 
     def main_loop(self):
         delta = self.clock.tick(self.fps)/1000.0
@@ -525,7 +587,7 @@ class Game(object):
             for event in pg.event.get():
                 self.keys = pg.key.get_pressed()
                 if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
-                    return
+                    sys.exit(0)
                 elif event.type == pg.KEYDOWN:
                     loading_screen = False
                 elif event.type == pg.MOUSEBUTTONDOWN:
@@ -559,7 +621,7 @@ class Game(object):
                 for event in pg.event.get():
                     self.keys = pg.key.get_pressed()
                     if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
-                        return
+                        sys.exit(0)
                     elif event.type == pg.KEYDOWN and self.keys[pg.K_SPACE]:
                         Game().main_loop()
                         return

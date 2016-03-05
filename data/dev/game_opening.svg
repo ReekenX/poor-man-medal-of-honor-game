@@ -14,9 +14,29 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="game_opening.svg"
+   inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/game_opening.png"
+   inkscape:export-xdpi="336.48193"
+   inkscape:export-ydpi="336.48193">
   <defs
-     id="defs4" />
+     id="defs4">
+    <pattern
+       inkscape:stockid="Stripes 1:1"
+       id="Strips1_1"
+       patternTransform="translate(0,0) scale(10,10)"
+       height="1"
+       width="2"
+       patternUnits="userSpaceOnUse"
+       inkscape:collect="always">
+      <rect
+         id="rect5443"
+         height="2"
+         width="1"
+         y="-0.5"
+         x="0"
+         style="fill:black;stroke:none" />
+    </pattern>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,9 +44,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="90.824256"
-     inkscape:cy="45.00224"
+     inkscape:zoom="4"
+     inkscape:cx="166.63773"
+     inkscape:cy="8.5069425"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,6 +96,14 @@
          x="41.25"
          y="94.862183"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Waree;-inkscape-font-specification:Waree Bold Oblique" /></text>
+    <rect
+       ry="9.9326563"
+       y="86.396469"
+       x="43.176693"
+       height="78.093437"
+       width="140.74576"
+       id="rect4712"
+       style="fill:url(#Strips1_1);fill-opacity:1;stroke:#0e5510;stroke-width:0.48025990000000002;stroke-opacity:1;opacity:0.05882353" />
     <path
        style="fill:#1a7450;fill-opacity:1;stroke:none"
        d="m 53.09375,86.40625 c -5.502692,0 -9.90625,4.434808 -9.90625,9.9375 l 0,2 c 0,-5.502692 4.403558,-9.9375 9.90625,-9.9375 l 120.90625,0 c 5.50269,0 9.9375,4.434808 9.9375,9.9375 l 0,-2 c 0,-5.502692 -4.43481,-9.9375 -9.9375,-9.9375 l -120.90625,0 z"
@@ -149,5 +177,27 @@
          x="66.22522"
          id="tspan4683"
          sodipodi:role="line">Poor man's</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="111.31156"
+       y="161.48004"
+       id="text4704"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4706"
+         x="111.31156"
+         y="161.48004">press any key to start the game</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4708"
+       y="161.68001"
+       x="111.41129"
+       style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="161.68001"
+         x="111.41129"
+         id="tspan4710"
+         sodipodi:role="line">press any key to start the game</tspan></text>
   </g>
 </svg>
