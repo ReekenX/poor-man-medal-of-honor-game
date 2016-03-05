@@ -625,7 +625,7 @@ class Game(object):
         if not self.closed:
             while True:
                 game_over_img = pg.image.load(settings.IMG_DIR + "/game_over.png").convert_alpha()
-                self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 438 / 2, settings.SCREEN_SIZE[1] / 2 - 171 / 2, 438, 171))
+                self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 528 / 2, settings.SCREEN_SIZE[1] / 2 - 294 / 2, 528, 294))
                 pg.display.update()
                 self.display_fps()
 

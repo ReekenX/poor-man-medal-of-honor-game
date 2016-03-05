@@ -2,64 +2,40 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="438.28281"
-   height="170.94847"
-   id="svg4587"
+   width="141.22601"
+   height="78.5737"
+   id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
+   sodipodi:docname="game_over.svg"
    inkscape:export-filename="/home/remigijus/Work/github/game-poor-man-medal-of-honor/data/img/game_over.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90"
-   sodipodi:docname="New document 18">
+   inkscape:export-xdpi="336.48193"
+   inkscape:export-ydpi="336.48193">
   <defs
-     id="defs4589">
-    <linearGradient
-       id="linearGradient7208"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop7210" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient5123">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop5125" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop5127" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5123"
-       id="linearGradient5129"
-       x1="42.664062"
-       y1="863.25769"
-       x2="217.40771"
-       y2="863.25769"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient7208"
-       id="linearGradient7212"
-       x1="42.664062"
-       y1="863.25769"
-       x2="217.40771"
-       y2="863.25769"
-       gradientUnits="userSpaceOnUse" />
+     id="defs4">
+    <pattern
+       inkscape:stockid="Stripes 1:1"
+       id="Strips1_1"
+       patternTransform="translate(0,0) scale(10,10)"
+       height="1"
+       width="2"
+       patternUnits="userSpaceOnUse"
+       inkscape:collect="always">
+      <rect
+         id="rect5443"
+         height="2"
+         width="1"
+         y="-0.5"
+         x="0"
+         style="fill:black;stroke:none" />
+    </pattern>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -68,23 +44,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="135.28958"
-     inkscape:cy="189.31786"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="63.331268"
+     inkscape:cy="29.016174"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1025"
-     inkscape:window-x="0"
-     inkscape:window-y="30"
-     inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata4592">
+     id="metadata7">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -99,56 +75,97 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-881.4137)">
+     transform="translate(-42.936563,-86.156339)">
     <rect
-       style="fill:#468dff;fill-opacity:1;stroke:#8ab7ff;stroke-width:1.81860077;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect7333"
-       width="436.4642"
-       height="169.12987"
-       x="0.90930039"
-       y="882.323" />
+       style="fill:#33824d;fill-opacity:1;stroke:#0e5510;stroke-width:0.4802599;stroke-opacity:1"
+       id="rect2985"
+       width="140.74576"
+       height="78.093437"
+       x="43.176693"
+       y="86.396469"
+       ry="9.9326563" />
     <text
        xml:space="preserve"
-       style="font-size:72.74403381px;font-style:normal;font-weight:normal;line-height:113.99999857%;letter-spacing:0px;word-spacing:0px;fill:#4282ff;fill-opacity:1;stroke:#000000;stroke-width:5.81952286;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Sans"
-       x="45.465019"
-       y="986.89258"
-       id="text4595"
-       sodipodi:linespacing="114%"><tspan
+       style="font-size:40px;font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Waree;-inkscape-font-specification:Waree Bold Oblique"
+       x="41.25"
+       y="94.862183"
+       id="text4538"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="45.465019"
-         y="986.89258"
-         id="tspan4603"
-         style="font-size:65.46962738px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-11.71179485px;fill:#4282ff;fill-opacity:1;stroke:#000000;stroke-width:5.81952286;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Mallige;-inkscape-font-specification:Mallige Bold Italic">Game Over</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16.36740685px;font-style:italic;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
-       x="158.21826"
-       y="1009.6251"
-       id="text7235"
-       sodipodi:linespacing="0%"><tspan
-         sodipodi:role="line"
-         id="tspan7237"
-         x="158.21826"
-         y="1009.6251"
-         style="font-size:16.36740685px;font-style:italic;line-height:0%;-inkscape-font-specification:Sans Italic">Press <tspan
-   style="font-weight:bold;-inkscape-font-specification:Sans Bold Italic"
-   id="tspan7335">space</tspan> to start over</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:72.74403381px;font-style:normal;font-weight:normal;line-height:113.99999857%;letter-spacing:0px;word-spacing:0px;fill:#4282ff;fill-opacity:1;stroke:none;font-family:Sans"
-       x="45.464909"
-       y="986.89301"
-       id="text4595-2"
-       sodipodi:linespacing="114%"><tspan
-         sodipodi:role="line"
-         x="45.464909"
-         y="986.89301"
-         id="tspan4603-6"
-         style="font-size:65.46962738px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-11.71179485px;fill:#4282ff;fill-opacity:1;stroke:none;font-family:Mallige;-inkscape-font-specification:Mallige Bold Italic">Game Over</tspan></text>
+         id="tspan4540"
+         x="41.25"
+         y="94.862183"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Waree;-inkscape-font-specification:Waree Bold Oblique" /></text>
+    <rect
+       ry="9.9326563"
+       y="86.396469"
+       x="43.176693"
+       height="78.093437"
+       width="140.74576"
+       id="rect4712"
+       style="fill:url(#Strips1_1);fill-opacity:1;stroke:#0e5510;stroke-width:0.48025990000000002;stroke-opacity:1;opacity:0.05882353" />
     <path
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:113.99999857%;letter-spacing:0px;word-spacing:0px;opacity:0.70098039;fill:#030307;fill-opacity:1;stroke:none;font-family:Sans"
-       d="m 82.348517,945.65636 c -17.623245,-0.57535 -32.677364,21.55205 -22.675678,36.8834 9.576886,9.00317 24.366606,5.01752 35.292221,0.68198 1.426709,4.75146 8.61601,5.42343 11.13893,3.97819 -8.447324,-1.22192 -6.524034,-13.83555 0.0568,-15.45811 -4.89337,0.60905 -8.789265,4.01056 -13.071192,6.36511 12.361232,-13.67552 -17.62623,-10.70211 -4.944321,-9.49074 3.919518,0.393 1.955356,16.45034 -4.091851,16.82206 -10.165855,3.77505 -23.943849,-3.28694 -21.936873,-15.40137 -0.229783,-13.88952 13.032592,-25.82136 27.108519,-22.50509 2.788682,0.56571 11.241728,3.51676 6.535596,-0.51148 -4.332145,-1.20255 -8.901956,-1.60863 -13.412181,-1.36395 z m 3.068889,21.99361 c 4.926832,-0.6025 -1.890421,-2.5224 0,0 z M 255.45658,945.65636 c -17.90178,-0.19859 -31.1632,23.91514 -20.28876,38.19061 13.60773,10.15962 35.26465,0.52867 38.57819,-15.99241 4.92799,-18.04046 5.41718,9.94029 7.9943,16.55691 6.72109,6.53478 -0.67708,-17.75755 -0.7465,-24.1252 -2.65345,-2.79664 -7.60979,-1.95663 -8.37418,-8.09432 -3.37562,-5.98416 -11.00039,-6.96953 -17.16305,-6.53559 z m -0.34099,1.59127 c 11.99513,-1.49254 16.57399,12.89607 12.67338,22.22094 -1.39965,12.18499 -16.96024,22.37206 -27.22218,13.29852 -8.1188,-10.2951 -2.67735,-28.65962 8.97934,-34.26917 1.78143,-0.72918 3.64013,-1.21651 5.56946,-1.25029 z M 113.88987,957.534 c -8.91318,0.68762 -1.7978,-0.10911 2.67107,0.68198 10.23526,1.55727 6.29433,13.53239 4.43284,20.11827 -8.82204,11.16839 15.08495,12.65746 13.97465,3.23256 1.54014,-7.7456 3.23925,-15.40191 4.66601,-23.18025 -8.71709,0.0928 -7.50349,27.13207 -12.13295,5.16083 -0.66132,-6.40693 -8.91785,-5.95919 -13.61162,-6.01339 z m -5.39897,0.45465 c -0.46042,10e-4 -0.81179,0.14367 0,0 z m -0.51148,0.0569 c -3.79837,0.39991 -3.90492,0.64524 0,0 z m 46.60165,-0.51158 c -3.97369,0.39246 -5.26542,1.40124 -0.85247,2.44384 7.02489,7.15092 -0.97564,18.54991 -0.79564,26.93802 8.0823,0.85911 4.6917,-11.96293 7.72905,-17.44729 3.0317,-4.6678 0.44714,-12.90264 -6.08094,-11.93457 z m 22.50518,0 c -3.82762,0.40864 -5.69396,1.40415 -0.9093,2.15959 8.36835,6.60625 -0.57398,18.924 -0.22732,27.22227 8.75061,-0.20604 3.96518,-19.43993 11.93456,-3.35313 3.76385,5.7215 15.3379,4.17841 18.527,3.6372 -8.45086,2.51367 -18.72888,-3.84161 -15.95368,-13.46438 -1.15835,-9.61457 12.6237,-21.70914 21.57998,-12.96207 4.80207,3.39951 -1.4836,13.79608 5.79679,11.02526 3.26942,-8.84476 -5.71654,-16.59078 -14.26465,-14.09415 -7.85785,0.2697 -13.57439,6.42893 -17.84502,12.44596 -0.96706,-5.41816 -0.95164,-14.04615 -8.63836,-12.61655 z m 147.07934,0 c -7.11847,0.25661 -15.81426,4.23334 -19.09132,9.71752 -1.46785,8.00566 -1.30316,20.09953 9.25951,20.2894 3.48433,0.99404 15.90114,-0.92076 7.4449,-0.0564 -10.52919,1.88807 -16.3318,-10.40058 -11.45344,-18.79051 1.06999,-10.92634 19.77814,-15.84671 22.36504,-3.54409 -3.62814,7.28531 9.12041,10.4766 6.16739,3.73304 -2.18452,-7.08654 -6.86133,-12.27595 -14.69208,-11.34843 z m 38.36111,0.0564 c -3.55882,0.36008 -7.65411,2.72226 -1.76177,1.93226 1.67981,1.23465 2.67324,-1.47525 1.76177,-1.93226 z m -71.6074,23.64181 c -6.31644,14.94963 7.82789,-9.69696 11.19576,-14.03723 7.42725,-12.71617 -1.15089,-7.23331 -6.40266,5.47362 -1.59769,2.85448 -3.19541,5.70913 -4.7931,8.56361 z m 51.83012,-19.20897 c -3.16151,8.03076 -0.0898,22.22348 -10.79794,23.58507 9.40704,-0.55449 10.76411,2.91303 12.55971,-12.33248 1.63661,-4.13295 4.79674,-24.08829 -1.76177,-11.25259 z m -10.91161,23.58507 c -0.44628,0.0182 -0.44735,0.3359 0,0 z M 103.48975,958.72755 c -0.39941,0.51503 1.48786,-0.50157 0,0 z m 201.75103,3.97819 c 3.82824,-1.30539 -2.27151,-3.47771 0,0 z m -92.23716,22.95984 c -0.43321,0.20241 0.59426,-0.16186 0,0 z m -2.15959,0.62505 c 0.19244,0.04 1.17016,-0.34335 0,0 z m 118.60687,0 c 0.19244,0.04 1.17016,-0.34335 0,0 z m 0,0 c 0.0724,-0.72635 -2.40854,1.25993 0,0 z"
-       id="text4595-2-2-4"
+       style="fill:#1a7450;fill-opacity:1;stroke:none"
+       d="m 53.09375,86.40625 c -5.502692,0 -9.90625,4.434808 -9.90625,9.9375 l 0,2 c 0,-5.502692 4.403558,-9.9375 9.90625,-9.9375 l 120.90625,0 c 5.50269,0 9.9375,4.434808 9.9375,9.9375 l 0,-2 c 0,-5.502692 -4.43481,-9.9375 -9.9375,-9.9375 l -120.90625,0 z"
+       id="rect4560"
        inkscape:connector-curvature="0" />
-  </g>
+    <text
+       xml:space="preserve"
+       style="font-size:54.77804947px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#313883;fill-opacity:1;stroke:#23205c;stroke-width:1.36945128;stroke-opacity:1;font-family:Sans"
+       x="64.046631"
+       y="107.28428"
+       id="text4569"
+       sodipodi:linespacing="125%"
+       transform="scale(0.80550205,1.2414618)"><tspan
+         id="tspan3996"
+         sodipodi:role="line"
+         x="64.046631"
+         y="107.28428"
+         style="font-size:27.38902473px;font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-4.0672698px;word-spacing:0px;fill:#313883;fill-opacity:1;stroke:#23205c;stroke-width:1.36945128;stroke-opacity:1;font-family:Waree;-inkscape-font-specification:Waree Bold Oblique">GAME OVER</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4622"
+       y="107.28428"
+       x="64.046631"
+       style="font-size:54.77804947px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#313883;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="scale(0.80550205,1.2414618)"><tspan
+         id="tspan3992"
+         style="font-size:27.38902473px;font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-4.0672698px;word-spacing:0px;fill:#313883;fill-opacity:1;stroke:none;font-family:Waree;-inkscape-font-specification:Waree Bold Oblique"
+         y="107.28428"
+         x="64.046631"
+         sodipodi:role="line">GAME OVER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="123.86271"
+       y="138.3223"
+       id="text4704"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4706"
+         x="123.86271"
+         y="138.3223">press space to start over</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4708"
+       y="138.52226"
+       x="124.06242"
+       style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="138.52226"
+         x="124.06242"
+         id="tspan4710"
+         sodipodi:role="line">press space to start over</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4009"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:4px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4011"><rect
+           id="rect4013"
+           width="143.54268"
+           height="33.057243"
+           x="9.8994951"
+           y="14.050206" /></flowRegion><flowPara
+         id="flowPara4015"></flowPara></flowRoot>  </g>
 </svg>
