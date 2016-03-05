@@ -331,11 +331,8 @@ class Game(object):
         self.obstacles = []
         self.enemies = []
         self.stars = []
-        self.load_map()
 
         self.bullets_left = 8
-
-        self.camera = Camera(complex_camera, self.camera_width, self.camera_height)
 
         self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 12)
 
@@ -512,6 +509,31 @@ class Game(object):
 
     def main_loop(self):
         delta = self.clock.tick(self.fps)/1000.0
+
+        loading_screen = True
+        while loading_screen:
+            block_img = pg.image.load(settings.IMG_DIR + "/ground1.png").convert_alpha()
+            for i in range(0, settings.SCREEN_SIZE[0] / 50 + 1):
+                for n in range(0, settings.SCREEN_SIZE[1] / 50 + 1):
+                    self.screen.blit(block_img, (i * 50, n * 50, 50, 50))
+
+            game_over_img = pg.image.load(settings.IMG_DIR + "/game_opening.png").convert_alpha()
+            self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 528 / 2, settings.SCREEN_SIZE[1] / 2 - 294 / 2, 528, 294))
+            pg.display.update()
+            self.display_fps()
+
+            for event in pg.event.get():
+                self.keys = pg.key.get_pressed()
+                if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
+                    return
+                elif event.type == pg.KEYDOWN:
+                    loading_screen = False
+                elif event.type == pg.MOUSEBUTTONDOWN:
+                    loading_screen = False
+
+        self.load_map()
+        self.camera = Camera(complex_camera, self.camera_width, self.camera_height)
+
         while not self.done:
             self.event_loop()
             for enemy in self.enemies:
