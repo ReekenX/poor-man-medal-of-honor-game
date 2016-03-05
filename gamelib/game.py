@@ -36,6 +36,7 @@ class Player(pg.sprite.Sprite):
         self.redraw = False  #Force redraw if needed.
         self.image = None
         self.angle = -math.radians(135)
+        self.lifes = 6
 
         self.sprites = pg.image.load(settings.IMG_DIR + "/player.png").convert_alpha()
         #  self.sprites.set_colorkey(COLOR_KEY)
@@ -163,6 +164,9 @@ class Bullet(pg.sprite.Sprite):
 
                 if type(obstacle) is Enemy:
                     obstacle.killed = True
+
+                if type(obstacle) is Player:
+                    obstacle.lifes -= 1
 
 
 class Block(pg.sprite.Sprite):
@@ -339,6 +343,8 @@ class Game(object):
         self.bullets_left = 8
 
         self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 14)
+        self.life_bar = pg.image.load(settings.IMG_DIR + "/life_bar.png").convert_alpha()
+        self.life = pg.image.load(settings.IMG_DIR + "/life.png").convert_alpha()
 
 
     def get_angle(self, mouse):
@@ -531,7 +537,10 @@ class Game(object):
                 self.screen.blit(obj.image, rect)
 
         self.screen.blit(self.font.render('Pyweek #21', 1, (250, 250, 250)), (10, 10, 200, 50))
-        self.screen.blit(self.font.render('Bullets: %d' % self.bullets_left, 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, settings.SCREEN_SIZE[1]-30, 500, 500))
+        #  self.screen.blit(self.font.render('Bullets: %d' % self.bullets_left, 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, settings.SCREEN_SIZE[1]-30, 500, 500))
+        self.screen.blit(self.life_bar, (settings.SCREEN_SIZE[0] - 125 - 20, settings.SCREEN_SIZE[1] - 18 - 20, 125, 18))
+        for i in range(0, self.player.lifes):
+            self.screen.blit(self.life, (settings.SCREEN_SIZE[0] - 140 + i * 16 + i * 3, settings.SCREEN_SIZE[1] - 18 - 16, 125, 18))
 
         #  for obj in self.player_bullets:
             #  olist = obj.make_mask().outline()
@@ -557,6 +566,8 @@ class Game(object):
         for obj in self.enemy_bullets:
             obj.check_collision(obstacles, self.camera)
             obj.check_collision([self.player], self.camera)
+            if self.player.lifes < 1:
+                self.done = True
         for enemy in self.enemies:
             if enemy.visible:
                 if self.player.collides_with_enemy(enemy, self.camera):
