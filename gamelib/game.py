@@ -215,6 +215,7 @@ class Notification(pg.sprite.Sprite):
         self.image = self.make_image(number)
         self.rect = self.image.get_rect(topleft=location)
         self.mask = pg.mask.from_surface(self.image)
+        self.number = int(number)
 
     def make_image(self, number):
         image = pg.image.load(settings.IMG_DIR + "/notification" + number + ".png").convert_alpha()
@@ -367,6 +368,8 @@ class Game(object):
         self.obstacles = []
         self.enemies = []
         self.improvements = []
+        self.notifications = []
+        self.show_notification = 0
 
         self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 14)
         self.life_bar = pg.image.load(settings.IMG_DIR + "/life_bar.png").convert_alpha()
@@ -401,7 +404,9 @@ class Game(object):
                 elif char == 'W':
                     self.improvements.append(Weapon((column*50 + 15, row*50 + 15)))
                 elif char == '1':
-                    self.notifications.append(Notification((column*50 + 15, row*50 + 15)))
+                    self.notifications.append(Notification((column*50 + 15, row*50 + 15), char))
+                elif char == '2':
+                    self.notifications.append(Notification((column*50 + 15, row*50 + 15), char))
                 elements.append(Ground((column*50, row*50)))
                 column += 1
             self.camera_width = column * 50
@@ -593,6 +598,15 @@ class Game(object):
         pg.display.set_caption(caption)
 
     def update(self, obstacles):
+        for notification in self.notifications:
+            if self.player.collides_with_improvement(notification, self.camera) and not self.player.weapon:
+                for notification in self.notifications:
+                    if notification.number == notification.number:
+                        self.notifications.remove(notification)
+                self.notifications = []
+                self.show_notification = notification.number
+                return
+
         for obj in self.player_bullets:
             obj.check_collision(obstacles, self.camera)
             obj.check_collision(self.enemies, self.camera)
@@ -619,6 +633,7 @@ class Game(object):
                     self.player.weapon = True
                     self.player.bullets_left = 3
                     self.improvements.remove(improvement)
+                    self.show_notification = 2
         self.player_bullets.update(self.screen_rect)
         self.enemy_bullets.update(self.screen_rect)
 
@@ -650,18 +665,31 @@ class Game(object):
         self.camera = Camera(complex_camera, self.camera_width, self.camera_height)
 
         while not self.done:
-            self.event_loop()
-            for enemy in self.enemies:
-                if enemy.visible:
-                    enemy.update(self.obstacles, delta, self.camera)
-                    if enemy.killed:
-                        self.enemies.remove(enemy)
-            self.player.update(self.obstacles, delta, self.camera)
-            self.update(self.obstacles)
-            self.draw()
-            pg.display.update()
-            delta = self.clock.tick(self.fps)/1000.0
-            self.display_fps()
+            if self.show_notification != 0:
+                game_over_img = pg.image.load(settings.IMG_DIR + "/notification" + str(self.show_notification) + ".png").convert_alpha()
+                self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 528 / 2, settings.SCREEN_SIZE[1] / 2 - 294 / 2, 528, 294))
+                pg.display.update()
+                self.display_fps()
+
+                for event in pg.event.get():
+                    self.keys = pg.key.get_pressed()
+                    if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
+                        sys.exit(0)
+                    elif event.type == pg.KEYDOWN and self.keys[pg.K_SPACE]:
+                        self.show_notification = 0
+            else:
+                self.event_loop()
+                for enemy in self.enemies:
+                    if enemy.visible:
+                        enemy.update(self.obstacles, delta, self.camera)
+                        if enemy.killed:
+                            self.enemies.remove(enemy)
+                self.player.update(self.obstacles, delta, self.camera)
+                self.update(self.obstacles)
+                self.draw()
+                pg.display.update()
+                delta = self.clock.tick(self.fps)/1000.0
+                self.display_fps()
 
 
         if not self.closed:
