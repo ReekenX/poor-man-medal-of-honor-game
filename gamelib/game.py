@@ -536,7 +536,7 @@ class Game(object):
             if rect.colliderect(self.screen_rect):
                 self.screen.blit(obj.image, rect)
 
-        self.screen.blit(self.font.render('Pyweek #21', 1, (250, 250, 250)), (10, 10, 200, 50))
+        self.screen.blit(self.font.render('Solder: John Doe', 1, (250, 250, 250)), (10, 10, 200, 50))
         #  self.screen.blit(self.font.render('Bullets: %d' % self.bullets_left, 1, (250, 250, 250)), (settings.SCREEN_SIZE[0]-140, settings.SCREEN_SIZE[1]-30, 500, 500))
         self.screen.blit(self.life_bar, (settings.SCREEN_SIZE[0] - 125 - 20, settings.SCREEN_SIZE[1] - 18 - 20, 125, 18))
         for i in range(0, self.player.lifes):
