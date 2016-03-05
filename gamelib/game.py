@@ -38,8 +38,11 @@ class Player(pg.sprite.Sprite):
         self.angle = -math.radians(135)
         self.lifes = 6
 
-        self.sprites = pg.image.load(settings.IMG_DIR + "/player.png").convert_alpha()
-        #  self.sprites.set_colorkey(COLOR_KEY)
+        self.weapon = False
+        self.bullets_left = 0
+        self.max_bullets = 8
+
+        self.sprites = pg.image.load(settings.IMG_DIR + "/player_no_weapon.png").convert_alpha()
 
         self.frame  = 0
         self.frames = self.get_frames()
@@ -123,9 +126,9 @@ class Player(pg.sprite.Sprite):
         rect = camera.apply_rect(self.rect)
         return self.rect.colliderect(enemy)
 
-    def collides_with_star(self, star, camera):
+    def collides_with_improvement(self, improvement, camera):
         rect = camera.apply_rect(self.rect)
-        return self.rect.colliderect(star)
+        return self.rect.colliderect(improvement)
 
 
 class Bullet(pg.sprite.Sprite):
@@ -191,6 +194,18 @@ class Star(pg.sprite.Sprite):
 
     def make_image(self):
         image = pg.image.load(settings.IMG_DIR + "/star.png").convert_alpha()
+        image.blit(image, (0,0))
+        return image
+
+class Weapon(pg.sprite.Sprite):
+    def __init__(self, location):
+        pg.sprite.Sprite.__init__(self)
+        self.image = self.make_image()
+        self.rect = self.image.get_rect(topleft=location)
+        self.mask = pg.mask.from_surface(self.image)
+
+    def make_image(self):
+        image = pg.image.load(settings.IMG_DIR + "/weapon.png").convert_alpha()
         image.blit(image, (0,0))
         return image
 
@@ -335,12 +350,11 @@ class Game(object):
 
         self.player_bullets = pg.sprite.Group()
         self.enemy_bullets = pg.sprite.Group()
+        self.weapon = []
         self.elements = []
         self.obstacles = []
         self.enemies = []
-        self.stars = []
-
-        self.bullets_left = 8
+        self.improvements = []
 
         self.font = pg.font.Font(settings.FONTS_DIR + '/Flames.ttf', 14)
         self.life_bar = pg.image.load(settings.IMG_DIR + "/life_bar.png").convert_alpha()
@@ -371,7 +385,9 @@ class Game(object):
                     enemy.rect.center = (column*50, row*50)
                     self.enemies.append(enemy)
                 elif char == 'S':
-                    self.stars.append(Star((column*50+20, row*50+20)))
+                    self.improvements.append(Star((column*50+20, row*50+20)))
+                elif char == 'W':
+                    self.improvements.append(Weapon((column*50, row*50)))
                 elements.append(Ground((column*50, row*50)))
                 column += 1
             self.camera_width = column * 50
@@ -431,9 +447,9 @@ class Game(object):
                 self.player.pop_direction(event.key)
 
             if event.type == pg.MOUSEBUTTONDOWN and event.button == 1:
-                if self.bullets_left > 0:
+                if self.player.bullets_left > 0 and self.player.weapon:
                     self.player_bullets.add(Bullet(self.player.rect.center, self.angle))
-                    self.bullets_left -= 1
+                    self.player.bullets_left -= 1
             elif event.type == pg.MOUSEMOTION:
                 self.get_angle(event.pos)
 
@@ -453,7 +469,7 @@ class Game(object):
                 self.screen.blit(obj.image, rect)
 
         # draw stars
-        for obj in self.stars:
+        for obj in self.improvements:
             rect = self.camera.apply(obj)
             if rect.colliderect(self.screen_rect):
                 self.screen.blit(obj.image, rect)
@@ -540,7 +556,10 @@ class Game(object):
         self.screen.blit(self.life_bar, (settings.SCREEN_SIZE[0] - 125 - 20, settings.SCREEN_SIZE[1] - 18 - 20, 125, 18))
         for i in range(0, self.player.lifes):
             self.screen.blit(self.life, (settings.SCREEN_SIZE[0] - 140 + i * 16 + i * 3, settings.SCREEN_SIZE[1] - 18 - 16, 125, 18))
-        self.screen.blit(self.font.render('Bullets: %d' % self.bullets_left, 1, (250, 250, 250)), (10, settings.SCREEN_SIZE[1]-30, 500, 500))
+        if self.player.weapon:
+            self.screen.blit(self.font.render('Bullets: %d' % self.player.bullets_left, 1, (250, 250, 250)), (10, settings.SCREEN_SIZE[1]-30, 500, 500))
+        else:
+            self.screen.blit(self.font.render('No weapon yet', 1, (250, 250, 250)), (10, settings.SCREEN_SIZE[1]-30, 500, 500))
 
         #  for obj in self.player_bullets:
             #  olist = obj.make_mask().outline()
@@ -573,10 +592,19 @@ class Game(object):
                 if self.player.collides_with_enemy(enemy, self.camera):
                     self.player.kill()
                     self.done = True
-        for star in self.stars:
-            if self.player.collides_with_star(star, self.camera):
-                self.bullets_left += 8
-                self.stars.remove(star)
+        for improvement in self.improvements:
+            if type(improvement) is Star:
+                if self.player.collides_with_improvement(improvement, self.camera) and self.player.weapon and self.player.bullets_left < self.player.max_bullets:
+                    self.player.bullets_left = self.player.max_bullets
+                    self.improvements.remove(improvement)
+            elif type(improvement) is Weapon:
+                if self.player.collides_with_improvement(improvement, self.camera) and not self.player.weapon:
+                    self.player.sprites = pg.image.load(settings.IMG_DIR + "/player_with_weapon.png").convert_alpha()
+                    self.player.frames = self.player.get_frames()
+                    self.player.adjust_images()
+                    self.player.weapon = True
+                    self.player.bullets_left = 3
+                    self.improvements.remove(improvement)
         self.player_bullets.update(self.screen_rect)
         self.enemy_bullets.update(self.screen_rect)
 
