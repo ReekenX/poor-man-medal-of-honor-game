@@ -32,6 +32,11 @@ Kill enemies until they noticed you.
 
 Press the left mouse button to fire.
 
+Screenshots
+===========
+
+![Latest version 1.2 screenshot](/data/screenshots/gameplay.png)
+
 
 
 License
