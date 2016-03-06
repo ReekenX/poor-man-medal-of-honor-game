@@ -605,6 +605,7 @@ class Game(object):
                         self.notifications.remove(notification)
                 self.notifications = []
                 self.show_notification = notification.number
+                pg.event.clear()
                 return
 
         for obj in self.player_bullets:
@@ -634,6 +635,7 @@ class Game(object):
                     self.player.bullets_left = 3
                     self.improvements.remove(improvement)
                     self.show_notification = 2
+                    pg.event.clear()
         self.player_bullets.update(self.screen_rect)
         self.enemy_bullets.update(self.screen_rect)
 
@@ -666,17 +668,20 @@ class Game(object):
 
         while not self.done:
             if self.show_notification != 0:
-                game_over_img = pg.image.load(settings.IMG_DIR + "/notification" + str(self.show_notification) + ".png").convert_alpha()
-                self.screen.blit(game_over_img, (settings.SCREEN_SIZE[0] / 2 - 528 / 2, settings.SCREEN_SIZE[1] / 2 - 294 / 2, 528, 294))
-                pg.display.update()
-                self.display_fps()
+                notification_img = pg.image.load(settings.IMG_DIR + "/notification" + str(self.show_notification) + ".png").convert_alpha()
+                self.screen.blit(notification_img, (settings.SCREEN_SIZE[0] / 2 - 528 / 2, settings.SCREEN_SIZE[1] / 2 - 294 / 2, 528, 294))
 
                 for event in pg.event.get():
                     self.keys = pg.key.get_pressed()
                     if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
                         sys.exit(0)
-                    elif event.type == pg.KEYDOWN and self.keys[pg.K_SPACE]:
+                    elif event.type == pg.KEYDOWN:
                         self.show_notification = 0
+                        pg.event.clear()
+                        self.player.direction_stack = []
+                delta = self.clock.tick(self.fps)/1000.0
+                pg.display.update()
+                self.display_fps()
             else:
                 self.event_loop()
                 for enemy in self.enemies:
